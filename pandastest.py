@@ -4,6 +4,8 @@ Spyder Editor
 
 This is a temporary script file.
 """
+
+import matplotlib.pyplot as plt
 import pandas as pd
 df = pd.DataFrame({'AAA' : [4,5,6,7], 'BBB' : [10,20,30,40],'CCC' : [100,50,-30,-50]}); df
 print (df)
@@ -16,5 +18,6 @@ for i in table:
 print("przechodzenie po slowniku - tablicy asocjacyjnej")
 for i, j in dictionary.items():
     print(i,j)
-    
+plt.plot(1,2)
+
     

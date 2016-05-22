@@ -14,8 +14,8 @@ class neuronkolumna:
 		print("[",self.wartosc, self.kolumna, "]")
 
 def otworz(plik):
-	if os.path.isfile(sFile):
-		with open(sFile, "r") as sTxt:
+	if os.path.isfile(plik):
+		with open(plik, "r") as sTxt:
 			for i, line in enumerate(sTxt):
 				line = line.replace("\n", "")
 				t = line.split(" ")
