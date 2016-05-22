@@ -1,7 +1,11 @@
 
 # coding: utf-8
 
+<<<<<<< HEAD
 # In[63]:
+=======
+# In[68]:
+>>>>>>> da03c64899f443a4d466e130915ee055d7829555
 
 def createNetwork(data,hashmap,neurons):
     for i in range(len(data)):
@@ -14,6 +18,7 @@ def createNetwork(data,hashmap,neurons):
             if(i == 0):
                 neurons.append(Neuron(j))
             (hashmap[i])[data[i][j]].append(neurons[j])
+<<<<<<< HEAD
 def wypisz(slowniki):
     for j in range(len(slowniki)):
         print("Kolumna nr -",j,"-")
@@ -28,6 +33,22 @@ def wypiszneurony(neurony):
 def pobudzNeuron(slowniki,wartosc,kolumna):
         for i in range(len((slowniki[kolumna])[wartosc])):
                   ((slowniki[kolumna])[wartosc])[i].change(1)
+=======
+def wypisz(hashmap):
+    for j in range(len(hashmap)):
+        print("Kolumna nr -",j,"-")
+        for key in hashmap[j]:
+            print(key, end="")
+            print(":", end="")
+            for i in range(len((hashmap[j])[key])):
+                  ((hashmap[j])[key])[i].prin()
+def wypiszneurony(neurons):
+    for j in range(len(neurons)):
+        neurons[j].prin()
+def pobudzNeuron(hashmap,value,kolumna):
+        for i in range(len((hashmap[kolumna])[value])):
+                  ((hashmap[kolumna])[value])[i].change(1)
+>>>>>>> da03c64899f443a4d466e130915ee055d7829555
 class Neuron:
     def __init__(self,neuron_id):
         self.neuron_id = neuron_id
@@ -48,5 +69,9 @@ createNetwork(listalist,listaslownikow,listaneuronow)
 wypisz(listaslownikow)
 pobudzneuron(listaslownikow,1,1)
 wypisz(listaslownikow)
+<<<<<<< HEAD
+=======
+print("\tNeurony")
+>>>>>>> da03c64899f443a4d466e130915ee055d7829555
 wypiszneurony(listaneuronow)
 
