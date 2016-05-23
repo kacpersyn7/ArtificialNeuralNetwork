@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[10]:
+# In[6]:
 
 def createNetwork(data,hashmap,neurons):
     for i in range(len(data)):
@@ -33,6 +33,7 @@ def wypisz(hashmap):
 def wypiszneurony(neurons):
     for j in range(len(neurons)):
         neurons[j].prine()
+        
 def pobudzNeuron(hashmap,value,kolumna):
         for i in range(len((hashmap[kolumna])[value])):
                   ((hashmap[kolumna])[value])[i].change(1)
@@ -53,11 +54,11 @@ class Neuron:
     def addConnect(self,kolumnaneurona):
         self.wartosc.append(kolumnaneurona)
     def change(self,power):
-        self.power = power
+        self.power = self.power + power
     def connect(self,otherneuron):
         self.pointer = otherneuron
     def prine(self):
-        print("N" + str(self.neuron_id))
+        print("N" + str(self.neuron_id) + " moc " + str(self.power))
         for i in range(len(self.wartosc)):
             self.wartosc[i].prin()
 krok = 0
@@ -69,7 +70,13 @@ listaneuronow = []
 createNetwork(listalist,listaslownikow,listaneuronow)                
 wypisz(listaslownikow)
 pobudzNeuron(listaslownikow,1,1)
+pobudzNeuron(listaslownikow,1,0)
 wypisz(listaslownikow)
 print("\tNeurony")
 wypiszneurony(listaneuronow)
+
+
+# In[ ]:
+
+
 
