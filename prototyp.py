@@ -1,6 +1,6 @@
 ileNeuronow = otworz(sFile)
  print ("Wpisów w bazie:", ileNeuronow)
-+print(tablica) 
++print(tablica)
  
  def segregowanie(tablica, i):
  	return [row[i] for row in tablica]
