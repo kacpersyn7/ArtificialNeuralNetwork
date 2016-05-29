@@ -59,17 +59,58 @@ def szukanie(tablica):
 			pol = neuronkolumna(el,"C"+str(j)); #Dodaj połączenie z wartością
 			t.append(pol);
 			slownik["C"+str(j)][el].append("N"+str(i)) #Tej wartości dodaj połączenie z tym neuronem
-		if i<len(tablica)-1:
-			t.append(neuronkolumna("N"+str(i+1),"N"))
+#		if i<len(tablica)-1:
+#			t.append(neuronkolumna("N"+str(i+1),"N"))
 		slownik["N"+str(i)] = t
 
 szukanie(tablica)
 
-#for klucz in slownik:
-#	print(klucz,":")
-#	for struktura in slownik[klucz]:
-#		if(type(struktura) == neuronkolumna):
-#			struktura.prin()
+
+wypisane = [];
+def wypsygnalu(typ, neuron):
+	wypisane.append(neuron)
+	if(typ is "n"):
+		print(neuron)
+		for pol in slownik[neuron]:
+			if(pol not in wypisane):
+				wypsygnalu("k", pol)
+	elif(typ is "k"):
+		neuron.prin()
+		for pol in slownik[neuron.kolumna][neuron.wartosc]:
+			if(pol not in wypisane):
+				wypsygnalu("n", pol)
+
+def wyppolaczen():
+	x=input("wpisz wartość z kolumny c0 ")
+	y=input("wpisz warość z kolumny c1 ")
+	odl={}
+	odl_y={}
+	for el in slownik["C0"]:
+		if(abs(int(el)-int(x)) not in odl):
+			odl[abs(int(el)-int(x))] = []
+		odl[abs(int(el)-int(x))].append(neuronkolumna(el,"C0"))
+	for el in slownik["C1"]:
+		if(abs(int(el)-int(x)) not in odl):
+			odl[abs(int(el)-int(x))] = []
+		odl[abs(int(el)-int(y))].append(neuronkolumna(el,"C1"))
+
+	for o in odl:
+		print(o,":")
+		for el in odl[o]:
+			el.prin()
+			print("  ->", slownik[el.kolumna][el.wartosc])
+
+#	print(odl_y)
+
+#	for el in odl_x:
+#		for pol in odl_x[el]:
+#			print(pol)
+#			for a in slownik[pol]:
+#				a.prin()
+
+wyppolaczen()
+
+
 
 for i in range(0, len(tablica[0])):
 	print("C"+str(i)+":")
@@ -82,16 +123,16 @@ for i in range(0, len(tablica)):
         neurons[i].addConnect(el)
         el.prin()
         
-x=1
-y=2
-i=0
-n1 = Neuron(1)
-for el in (slownik["N"+str(1)]):
-        n1.addConnect(el)
-print("")
-for i in range(len(neurons)):
-    neurons[i].prine()
-    
+#x=1
+#y=2
+#i=0
+#n1 = Neuron(1)
+#for el in (slownik["N"+str(1)]):
+#        n1.addConnect(el)
+#print("")
+#for i in range(len(neurons)):
+#    neurons[i].prine()
+#
 
 #slownik["N1"][0].prin()
 

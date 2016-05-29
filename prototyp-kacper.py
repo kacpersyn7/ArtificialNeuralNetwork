@@ -70,7 +70,10 @@ listaneuronow = []
 createNetwork(listalist,listaslownikow,listaneuronow)                
 wypisz(listaslownikow)
 pobudzNeuron(listaslownikow,1,1)
+<<<<<<< Updated upstream
 pobudzNeuron(listaslownikow,1,0)
+=======
+>>>>>>> Stashed changes
 wypisz(listaslownikow)
 print("\tNeurony")
 wypiszneurony(listaneuronow)
