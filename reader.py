@@ -5,7 +5,7 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
-import os 
+import os
 tablica = []
 slownik = {}
 name = input("Podaj nazwe pliku ")
