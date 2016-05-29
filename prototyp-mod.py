@@ -5,7 +5,7 @@
 
 #! /usr/bin/env python
 
-import os.path
+import os.path 
 
 sFile = "slownik.txt"
 tablica = []
