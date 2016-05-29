@@ -112,6 +112,7 @@ wyppolaczen()
 
 
 
+
 for i in range(0, len(tablica[0])):
 	print("C"+str(i)+":")
 	for key in sorted(slownik["C"+str(i)]):
